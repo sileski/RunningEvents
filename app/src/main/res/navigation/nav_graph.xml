@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/loginSignupContainerFragment"
+        android:name="com.example.runningevents.presentation.login_signup_container.LoginSignupContainerFragment"
+        android:label="login_register_fragment"
+        tools:layout="@layout/fragment_login_register_pager">
+        <action
+            android:id="@+id/action_loginRegisterFragment_to_racesFragment"
+            app:destination="@id/racesFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/racesFragment"
+        android:name="com.example.runningevents.presentation.races.RacesFragment"
+        android:label="fragment_races"
+        tools:layout="@layout/fragment_races">
+        <action
+            android:id="@+id/action_racesFragment_to_raceDetailsFragment"
+            app:destination="@id/raceDetailsFragment" />
+        <action
+            android:id="@+id/action_racesFragment_to_raceFiltersFragment"
+            app:destination="@id/raceFiltersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/raceDetailsFragment"
+        android:name="com.example.runningevents.presentation.race_details.RaceDetailsFragment"
+        android:label="fragment_race_details"
+        tools:layout="@layout/fragment_race_details">
+        <argument
+            android:name="race"
+            app:argType="com.example.runningevents.domain.models.Race" />
+    </fragment>
+    <fragment
+        android:id="@+id/raceFiltersFragment"
+        android:name="com.example.runningevents.presentation.race_filters.RaceFiltersFragment"
+        android:label="fragment_race_filters"
+        tools:layout="@layout/fragment_preferences" />
+    <dialog
+        android:id="@+id/newRaceFragment"
+        android:name="com.example.runningevents.presentation.add_new_race.NewRaceDialogFragment"
+        android:label="NewRaceFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.runningevents.presentation.settings.SettingsFragment"
+        android:label="SettingsFragment">
+        <action
+            android:id="@+id/action_settingsFragment_to_loginSignupContainerFragment"
+            app:destination="@id/loginSignupContainerFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/myRacesFragment"
+        android:name="com.example.runningevents.presentation.my_races.MyRacesFragment"
+        android:label="fragment_my_races"
+        tools:layout="@layout/fragment_my_races">
+        <action
+            android:id="@+id/action_myRacesFragment_to_newRaceFragment"
+            app:destination="@id/newRaceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.runningevents.presentation.start_screen.StartScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_start_screen">
+        <action
+            android:id="@+id/action_splashScreenFragment_to_loginSignupContainerFragment"
+            app:destination="@id/loginSignupContainerFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_racesFragment"
+            app:destination="@id/racesFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

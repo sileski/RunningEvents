@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:icon="@drawable/ic_sort"
+        app:title="Races">
+        <ListPreference
+            app:defaultValue="date"
+            app:dialogTitle="Sort"
+            app:entries="@array/races_sort_entries"
+            app:entryValues="@array/races_sort_values"
+            app:key="@string/races_sort_preference_key"
+            app:title="@string/sort"
+            app:useSimpleSummaryProvider="true" />
+
+        <SeekBarPreference
+            android:max="1000"
+            app:defaultValue="100"
+            app:key="@string/radius_preference_key"
+            app:min="10"
+            app:showSeekBarValue="true"
+            app:title="@string/radius_km" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:icon="@drawable/ic_distance"
+        app:title="Races Distance">
+        <CheckBoxPreference
+            app:defaultValue="true"
+            app:key="@string/filter_distance_option_all_key"
+            app:title="@string/all" />
+        <CheckBoxPreference
+            app:defaultValue="false"
+            app:key="@string/filter_distance_option_5km_key"
+            app:title="@string/five_km" />
+        <CheckBoxPreference
+            app:defaultValue="false"
+            app:key="@string/filter_distance_option_10km_key"
+            app:title="@string/ten_km" />
+        <CheckBoxPreference
+            app:defaultValue="false"
+            app:key="@string/filter_distance_option_half_key"
+            app:title="@string/half_marathon" />
+        <CheckBoxPreference
+            app:defaultValue="false"
+            app:key="@string/filter_distance_option_marathon_key"
+            app:title="@string/marathon" />
+    </PreferenceCategory>
+</PreferenceScreen>

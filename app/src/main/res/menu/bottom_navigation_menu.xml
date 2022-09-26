@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/racesFragment"
+        android:icon="@drawable/ic_run"
+        android:title="Races" />
+    <item
+        android:id="@+id/myRacesFragment"
+        android:icon="@drawable/ic_event"
+        android:title="My Races" />
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="Settings" />
+</menu>

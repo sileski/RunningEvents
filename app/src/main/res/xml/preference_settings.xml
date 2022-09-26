@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/settings"
+        android:icon="@drawable/ic_settings">
+        <Preference
+            android:key="@string/login_preference_key"
+            android:title="@string/log_in" />
+
+        <Preference
+            android:key="@string/logout_preference_key"
+            android:title="@string/log_out" />
+    </PreferenceCategory>
+</PreferenceScreen>
